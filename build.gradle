@@ -73,6 +73,12 @@ processResources {
     rename '(.+_at.cfg)', 'META-INF/$1'
 }
 
+jar {
+    manifest {
+        attributes 'FMLAT': 'ta_at.cfg'
+    }
+}
+
 shadowJar {
     dependencies {
         //we remove gson because it belongs to the public api and will break shading
